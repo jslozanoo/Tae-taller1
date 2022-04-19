@@ -1,0 +1,35 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="homework 1" verbose="1">
+    <parameter name="browser" value="chrome"></parameter>
+    <parameter name="page" value="https://www.facebook.com"></parameter>
+    <parameter name="userMail" value="user@gmail.com"></parameter>
+    <parameter name="password" value="*****"></parameter>
+    <parameter name="friend" value="glober"></parameter>
+    <parameter name="friendToDelete" value="glober"></parameter>
+    <parameter name="photo" value="nice-photo.png"></parameter>
+    <test name="delete friend test">
+        <classes>
+            <class name="com.globant.DeleteFriend">
+                <methods>
+                    <include name="deleteFriend"></include>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="change profile photo test">
+        <classes>
+            <class name="com.globant.DeleteFriend">
+                <methods>
+                    <exclude name="deleteFriend"></exclude>
+                </methods>
+            </class>
+            
+            <class name="com.globant.ChangePhotoTest">
+                <methods>
+                    <include name="changeProfilePhoto"></include>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>
